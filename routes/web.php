@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Admin\SubcatController;
 use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -50,3 +52,9 @@ Route::post('/password/update', [App\Http\Controllers\HomeController::class, 'pa
 //class
 // Students Controller
 Route::resource('categories', CategoryController::class);
+Route::get('/subcategory/index', [SubcatController::class, 'index'])->name('subcategory.index');
+Route::get('/subcategory/create', [SubcatController::class, 'create'])->name('subcategory.create');
+Route::post('/subcategory/store', [SubcatController::class, 'store'])->name('subcategory.store');
+Route::get('/subcategory/delete/{id}', [SubcatController::class, 'destroy'])->name('subcategory.destroy');
+Route::get('/subcategory/edit/{id}', [SubcatController::class, 'edit'])->name('subcategory.edit');
+Route::post('/subcategory/update/{id}', [SubcatController::class, 'update'])->name('subcategory.update');
