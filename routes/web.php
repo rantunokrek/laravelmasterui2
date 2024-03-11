@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\SubcatController;
 use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -58,3 +59,12 @@ Route::post('/subcategory/store', [SubcatController::class, 'store'])->name('sub
 Route::get('/subcategory/delete/{id}', [SubcatController::class, 'destroy'])->name('subcategory.destroy');
 Route::get('/subcategory/edit/{id}', [SubcatController::class, 'edit'])->name('subcategory.edit');
 Route::post('/subcategory/update/{id}', [SubcatController::class, 'update'])->name('subcategory.update');
+
+// Post Controller
+
+Route::get('/post/index', [PostController::class, 'index'])->name('post.index');
+Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
+Route::get('/post/delete/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
+Route::post('/post/update/{id}', [PostController::class, 'update'])->name('post.update');

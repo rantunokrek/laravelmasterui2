@@ -93,6 +93,30 @@
 
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+               Post
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('post.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add post</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('post.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Post</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
 
          
            <li class="nav-item">
