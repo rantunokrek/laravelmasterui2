@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-md-9">
           <div class="card">
                 <div class="card-header"> All Posts</div>
                 @if(session()->has('success'))
@@ -41,7 +41,7 @@
                       <td>{{$item->subcategory->subcategory_name}}</td> 
                       <td>{{$item->user->name}}</td> 
                       <td>{{$item->title}}</td> 
-                      <td>{{$item->post_date}}</td> 
+                      <td>{{date('d F y', strtotime($item->post_date))}}</td> 
                       <td>
                         @if ($item->status==1)
                         <span class="badge badge-success">Active</span>
@@ -55,7 +55,7 @@
                       <td>
   
                         <a class="btn btn-sm btn-primary" href="{{route('post.edit', $item->id)}}"> edit</a>
-                        <a class="btn btn-sm btn-danger" href="{{route('post.destroy',$item->id)}}"> Delete</a>
+                        <a class="btn btn-sm btn-danger" href="{{route('post.destroy',$item->id)}}" onclick="return confirm('are you sure to Delete');"> Delete</a>
                      
                    
                       </td>
